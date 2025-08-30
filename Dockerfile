@@ -1,10 +1,10 @@
 FROM n8nio/n8n:latest
 
+# Railway expects the process to listen on $PORT
 ENV PORT=5678
 
-ENV N8N_PORT = 5678
-ENV N8N_HOST = 0.0.0.0
-
+# Expose the port for clarity (Railway maps it automatically)
 EXPOSE 5678
 
-CMD ["n8n"]
+# DO NOT override CMD/ENTRYPOINT — use the image's default entrypoint
+# (no CMD here)
